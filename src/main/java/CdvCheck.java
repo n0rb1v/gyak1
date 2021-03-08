@@ -8,11 +8,11 @@ public class CdvCheck {
             for (int i = 0; i < 9; i++) {
                 sum += Integer.parseInt(String.valueOf(s.charAt(i))) * (i+1);
             }
+            if (Integer.parseInt(String.valueOf(s.charAt(9))) == sum % 11) {
+                return true;
+            }
         }catch (NumberFormatException e){
             throw new IllegalArgumentException("hibas parameter");
-        }
-        if (Integer.parseInt(String.valueOf(s.charAt(9))) == sum % 11) {
-            return true;
         }
         return false;
     }
